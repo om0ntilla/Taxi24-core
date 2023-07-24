@@ -1,7 +1,6 @@
 import {DriverEntity} from "../entity/driver.entity";
 import {LocationDto} from "./location-dto";
 
-
 const LOCATION_NOT_ACTIVE = 'LOCATION_NOT_ACTIVE'
 
 export class DriverDto {
@@ -16,7 +15,6 @@ export class DriverDto {
 
     public static async toDto(driver: DriverEntity, km: number): Promise<DriverDto> {
         let local = await Promise.resolve(driver.location);
-
         return {
             driver_id: driver.id,
             first_name: driver.first_name,

@@ -11,9 +11,12 @@ export class TravelDto {
 
 
     public static async toDto(travel: TravelEntity): Promise<TravelDto> {
-        let driver = await Promise.resolve(travel.driver);
-        let origin = await Promise.resolve(travel.originLocation);
-        let arrival = await Promise.resolve(travel.arrivalLocation);
+
+        const [driver, origin, arrival] = await Promise.all([
+            Promise.resolve(travel.driver),
+            Promise.resolve(travel.originLocation),
+            Promise.resolve(travel.arrivalLocation)
+        ]);
         return {
             name: travel.name,
             driver: DriverDto.toDto(driver, null),

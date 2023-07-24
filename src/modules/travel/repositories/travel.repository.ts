@@ -16,6 +16,7 @@ export class TravelRepository {
 
     async findByActive(): Promise<TravelEntity[]> {
         return await this.travelRepo.find({
+            relations: ['driver'],
             where: {
                 active: STATUS_ACTIVE
             }
