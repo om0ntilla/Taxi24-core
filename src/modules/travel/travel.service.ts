@@ -188,7 +188,7 @@ export class TravelService {
         }
     }
 
-    async getPessenger(response) {
+    async getPassenger(response) {
         try {
             let result = await this.passengerRepo.findByActive()
 

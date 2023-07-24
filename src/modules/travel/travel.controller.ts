@@ -55,15 +55,15 @@ export class TravelController {
     }
 
 
-    @Get('/pessenger/:id')
+    @Get('/passenger/:id')
     async getPessengerId(@Param('id') id: number, @Res() response
     ): Promise<any> {
         return await this.travelService.getPessengerId(id, response)
     }
 
-    @Get('/pessenger')
-    async getPessenger(@Res() response
+    @Get('/passenger')
+    async getPassenger(@Res() response
     ): Promise<any> {
-        return await this.travelService.getPessenger(response)
+        return await this.travelService.getPassenger(response)
     }
 }
